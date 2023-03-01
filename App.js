@@ -1,4 +1,4 @@
-import {View, Text,Button} from 'react-native';
+import {View, Text,Button,StyleSheet} from 'react-native';
 import React, { useEffect } from 'react';
 // import Counter from './src/components/Counter';
 import {Provider} from 'react-redux';
@@ -10,11 +10,11 @@ import SplashScreen from 'react-native-splash-screen'
 
 const App = () => {
   useEffect(()=>{
-    setTimeout(()=>{SplashScreen.hide();},5000)
+    setTimeout(()=>{SplashScreen.hide();},3000)
     
   });
   return (
-    <View>
+    <View style={styles.App}>
       <Provider store={store}>
         <Test/>
         <Counter/>
@@ -22,5 +22,11 @@ const App = () => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  App:{
+    margin:10,
+  },
+});
 
 export default App;
